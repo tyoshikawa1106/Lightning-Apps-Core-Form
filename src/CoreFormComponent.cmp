@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="expenses" type="BarnSwallow.Expense__c" />
+    <form>
+        <fieldset>
+            <ui:InputText aura:Id="expname" label="Expense Name" class="form-control" value="{!v.newExpense.name}" placeholder="My Expense" required="true" />
+            <ui:InputNumber aura:Id="amount" label="Amount" class="form-control" value="{!v.newExpense.BarnSwallow__Amount__c}" placeholder="20.80" required="true" />
+            <ui:InputText aura:Id="client" label="Client" class="form-control" value="{!v.newExpense.BarnSwallow__Client__c}" placeholder="ABC Co." />
+            <ui:InputDateTime aura:Id="expdate" label="Expense Date" class="form-control" value="{!v.newExpense.BarnSwallow__Date__c}" displayDatePicker="false" />
+            <ui:InputCheckbox aura:Id="reimbursed" label="Reimbursed?" class="form-control" value="{!v.newExpense.BarnSwallow__Reimbursed__c}" />
+            <ui:button label="Submit" press="{!c.createExpense}" />        
+        </fieldset>
+    </form>
+</aura:component>
